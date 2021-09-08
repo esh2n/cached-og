@@ -35,7 +35,8 @@ export interface Content {
 function getContent(req: NextApiRequest): Content {
   const title = req.query.title as string;
   const body = req.query.body as string;
-  const color = req.query.body as string;
+  const color = req.query.color as string;
+
   const { tags } = req.query;
   return { title, body, color, tags };
 }
@@ -43,7 +44,7 @@ function getContent(req: NextApiRequest): Content {
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const content = getContent(req);
-    console.log(content);
+    // console.log(content);
 
     const html = getHtml(content);
     const viewport = { width: 1200, height: 630 };

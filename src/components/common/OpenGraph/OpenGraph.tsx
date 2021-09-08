@@ -6,7 +6,7 @@ export interface Props {
   tags: string[];
 }
 
-const OpenGraph = ({ title, body, color = '#DCA584;', tags }: Props) => {
+const OpenGraph = ({ title, body, color = 'DCA584', tags }: Props) => {
   const css = `
     @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap');
     html,
@@ -107,7 +107,7 @@ const OpenGraph = ({ title, body, color = '#DCA584;', tags }: Props) => {
             <div className="author">@esh2n</div>
           </div>
 
-          <div className="bar" style={{ backgroundColor: color }}></div>
+          <div className="bar" style={{ backgroundColor: '#' + color }}></div>
         </div>
       </body>
     </html>
